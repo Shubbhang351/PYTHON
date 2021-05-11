@@ -1,4 +1,7 @@
 def fibbo(n,l):
+    if n == 0 or n == 1:
+        return l[n]
+
     if l[n - 1] != -1:
         fnm1 = l[n - 1]
     else:
@@ -15,7 +18,9 @@ def fibbo(n,l):
 
 
 n = int(input())
-l = [-1] * n + 1
+l = [-1] * (n + 1)
+
+l[0],l[1] = 0,1
 
 print(fibbo(n,l))
 

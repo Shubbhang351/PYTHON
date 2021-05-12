@@ -39,7 +39,7 @@ class MazePath{
 
         return ch + cv;
     }
-
+    // bottom up
     public static int MPBU(int er, int ec){
         int[][] strg = new int[er + 2][ec + 2];
 
@@ -60,12 +60,34 @@ class MazePath{
         return strg[0][0];
     }
 
+    // space efficient bottom up
+    public static int MPBU_space_effi(int er, int ec){
+        int strg[] = new int[ec + 1];
+
+        Arrays.fill(strg, 1);
+
+        for(int row = er - 1;row >= 0; row--){
+            //System.out.println(Arrays.toString(strg));
+            for(int col = ec;col >= 0;col--){
+                if(col == ec){
+                    continue;
+                }
+                strg[col] = strg[col] + strg[col + 1];
+            }
+        }
+
+        
+
+        return strg[0];
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int er = sc.nextInt();
+        int ec = sc.nextInt();
         //System.out.println(MPRecursion(0, 0, n, n));
         //System.out.println(MPTD(0, 0, n, n, new int[n + 1][n + 1]));
 
-        System.out.println(MPBU(n, n));
+        System.out.println(MPBU_space_effi(er, ec));
     }
 }

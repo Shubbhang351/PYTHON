@@ -8,12 +8,14 @@ public class Fibonacci {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         //System.out.println(FibRecursive(n));
-        int l[] = new int[n + 1];
+        // int l[] = new int[n + 1];
         
 
-        int ans = FibboTD(n, l);
-        System.out.println(ans);
-        System.out.println(Arrays.toString(l));
+        // int ans = FibboTD(n, l);
+        // System.out.println(ans);
+        // System.out.println(Arrays.toString(l));
+
+        System.out.println(fibnoUP(n));
     }
     
     public static int FibRecursive(int n){
@@ -45,4 +47,18 @@ public class Fibonacci {
 
         return fnm1 + fnm2;
     }
+
+    public static int fibnoUP(int n){
+        int strg[] = new int[n + 1];
+
+        strg[0] = 0;
+        strg[1] = 1;
+
+        for(int i = 2;i <= n ;i++){
+            strg[i] = strg[i - 1] + strg[i - 2];
+        }
+
+        return strg[n];
+    }
+    
 }

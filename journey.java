@@ -84,19 +84,20 @@ class Journey {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<List<Integer>> aa = new ArrayList<>();
-        int m = sc.nextInt();
-        int n = sc.nextInt();
-        for(int i = 0;i < m;i++){
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            List<Integer> temp = new ArrayList();
-            temp.add(a);
-            temp.add(b);
-            aa.add(temp);
-        }
+        // List<List<Integer>> aa = new ArrayList<>();
+        // int m = sc.nextInt();
+        // int n = sc.nextInt();
+        // for(int i = 0;i < m;i++){
+        //     int a = sc.nextInt();
+        //     int b = sc.nextInt();
+        //     List<Integer> temp = new ArrayList();
+        //     temp.add(a);
+        //     temp.add(b);
+        //     aa.add(temp);
+        // }
 
-        int ans = journeyToMoon(n, aa);
-        System.out.println(ans);
+        // int ans = journeyToMoon(n, aa);
+        // System.out.println(ans);
+        
     }
 }

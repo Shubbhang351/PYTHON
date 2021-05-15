@@ -1,23 +1,40 @@
-m,n = map(int, input().split())
-l = [[] for i in range(m)]
+def solve(n,a):
+    value = 0
+    prev_value = 0
+    answer = 0
+    l = [[] for i in range(n)]
+    for i in range(len(a)):
+        t = a[i]
+        l[t[0]].append(t[1])
+        l[t[1]].append(t[0])
+    visited = [False] * n
+    
+    return 0
+    for i in range(len(visited)):
+        if  visited[i] == False:
+            value = bfsVisisted(l,i,visited)
+        print(answer, prev_value,value)
+        answer = answer + (prev_value) * value
+        prev_value += value
+        value = 0
+    return answer
 
-for i in range(n):
-    a,b = map(int,input().split())
-    l[a].append(b)
-    l[b].append(a)
+def bfsVisisted(l,i,visited):
+    value = 0
+    queue = []
+    queue.append(i)
+    while len(queue) != 0:
+        presentNode = queue.pop(0)
+        if not visited[presentNode]:
+            value += 1
+            visited[presentNode] = True
 
-a = [0] * m
-
-g = 1
-for i in range(len(a)):
-    if a[i] == 0:
-        a[i] = g
+        for i in l[presentNode]:
+            if not visited[i]:
+                queue.append(i)
+    return value
 
 
-def solve(a,g,k,l):
-    q = []
-    o = l[k]
-    if len(o) > 0:
-        q.extend(o)
-        while len(q) != 0:
-            ele = q.pop(0)
+n = 100000
+a = [[1,2],[3,4]]
+print(solve(n,a))

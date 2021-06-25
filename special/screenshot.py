@@ -17,13 +17,24 @@ class Application(tk.Frame):
         
 
     def say_hi(self):
-        global final_path
-
         time = str(datetime.datetime.today().strftime('%H-%M-%S'))
 
         date = str(datetime.date.today())
 
         name =  time + "_" + date + '.png'
+
+        path = os.getcwd()
+
+        folder = 'MY_Screenshots'
+
+        check = os.path.isdir(folder)
+
+        if not check:
+            os.makedirs(folder)
+        else:
+            pass
+
+        final_path = os.path.join(path,folder)
 
         final_name = final_path + '\\' + name
         
@@ -34,17 +45,5 @@ class Application(tk.Frame):
         print("hi there, everyone!")
 
 root = tk.Tk()
-path = os.getcwd()
-folder = 'MY_Screenshots'
-
-check = os.path.isdir(folder)
-
-if not check:
-    os.makedirs(folder)
-else:
-    pass
-
-final_path = os.path.join(path,folder)
-
 app = Application(master=root)
 app.mainloop()

@@ -10,7 +10,9 @@ def speak(text):
 
 translator = Translator()
 
-result = translator.translate('mujhai nahi pta hai',src = 'hi', dest = 'en')
+message = 'bhai tu bata de'
+
+result = translator.translate(message,src = 'hi', dest = 'en')
 
 print(result.src)
 print(result.dest)
@@ -19,4 +21,4 @@ print(result.text)
 print(result.pronunciation)
 
 speak(result.text)
-speak(result.src)
+speak(message)

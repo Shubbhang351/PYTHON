@@ -46,8 +46,6 @@ def process_image():
 
     file.save(destination)
 
-    
-
     return jsonify({'msg': 'success', 'size': [img.width, img.height]})
 
 app.run(debug=True)

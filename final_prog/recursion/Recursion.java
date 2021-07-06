@@ -6,7 +6,7 @@ class Recursion{
         // int[] ans = solve(arr, 0, 0, 0);
         // System.out.println(Arrays.toString(ans));
         // System.out.println(stair(3));
-        PDI(4);
+        System.out.println(factorial(5));
     }
 
 
@@ -57,5 +57,13 @@ class Recursion{
         PDI(n - 1);
 
         System.out.println(n);
+    }
+
+    public static int factorial(int n){
+        if(n == 1){
+            return 1;
+        }
+
+        return n * factorial(n - 1);
     }
 }

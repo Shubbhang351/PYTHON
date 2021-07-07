@@ -6,7 +6,10 @@ class Recursion{
         // int[] ans = solve(arr, 0, 0, 0);
         // System.out.println(Arrays.toString(ans));
         // System.out.println(stair(3));
-        System.out.println(factorial(5));
+        // System.out.println(factorial(0));
+        // System.out.println(pow(2,8));
+        // System.out.println(fibonacci(6));
+        subsequence("abc", "", 0);
     }
 
 
@@ -60,10 +63,36 @@ class Recursion{
     }
 
     public static int factorial(int n){
-        if(n == 1){
+        if(n == 1 || n == 0){
             return 1;
         }
 
         return n * factorial(n - 1);
+    }
+
+    public static int pow(int base, int expo){
+        if(expo == 1){
+            return base;
+        }
+
+        return base * pow(base, expo - 1);
+    }
+
+    public static int fibonacci(int n){
+        if(n == 0 || n == 1){
+            return n;
+        }
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void subsequence(String s,String ans,int i){
+        if(i == s.length()){
+            System.out.println(">> " + ans);
+            return;
+        }
+
+        subsequence(s, ans + s.charAt(i), i + 1);
+        subsequence(s, ans, i + 1);
     }
 }

@@ -9,7 +9,8 @@ class Recursion{
         // System.out.println(factorial(0));
         // System.out.println(pow(2,8));
         // System.out.println(fibonacci(6));
-        subsequence("abc", "", 0);
+        // subsequence("abc", "", 0);
+        ruler(1,5);
     }
 
 
@@ -95,4 +96,32 @@ class Recursion{
         subsequence(s, ans + s.charAt(i), i + 1);
         subsequence(s, ans, i + 1);
     }
+
+    public static void pattern(int tl){
+        if(tl == 0){
+            return;
+        }
+        pattern(tl - 1);
+        for(int i = 1;i <= tl;i++){
+            System.out.print("- ");
+        }
+        System.out.println();
+        pattern(tl - 1);
+    }
+
+    public static void ruler(int inch, int mtl){
+        String s = "";
+        for(int i = 1;i <= mtl;i++){
+            s += "- ";
+        }
+        System.out.println(s + " 0");
+
+
+        for(int i = 1;i <= inch;i++){
+            pattern(mtl - 1);
+            System.out.println(s + " " + i);
+        }
+    } 
+
+    
 }

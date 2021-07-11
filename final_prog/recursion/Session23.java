@@ -6,7 +6,7 @@ class Recursio{
         // climbingStairs(3, 0, "");
         // mazePath(2,2, 0, 0, "");
         // allPermutations("abc", new boolean["abc".length()], "");
-        allPermutations("abc", "");
+        allPermutations("a", "");
     }
 
     public static void validParanthesis(int n,int open_bracket, int close_bracket,String ans){
@@ -97,5 +97,6 @@ class Recursio{
             allPermutations(new_str, ans + s.charAt(i));
         }
     }
+    
 
 }
